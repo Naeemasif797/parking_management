@@ -1,26 +1,26 @@
 
 <% if current_user && current_user.admin == true %>
-<h1>Parkings</h1>
- <table class="table">
- <thead>
-    <tr>
-      <th scope="col">ID</th>
-      <th scope="col">NAME</th>
-      <th scope="col">DESCRIPTION</th>
-      <th scope="col">ACTIONS</th>
-    </tr>
-  </thead>
-
-<%= link_to "New parking", new_parking_path %>
-<div id="parkings">
-	<tbody>
-  <% @parkings.each do |parking| %>
-    <%= render parking %>
-  <% end %>
-   </tbody>
-</div>
+  <h1>Parkings</h1>
+  <table class="table">
+     <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">NAME</th>
+        <th scope="col">DESCRIPTION</th>
+        <th scope="col">ACTIONS</th>
+      </tr>
+    </thead>
+    <div id="parkings">
+    	<tbody>
+        <% @parkings.each do |parking| %>
+        <%= render parking %>
+        <% end %>
+      </tbody>
+    </div>
+  </table>
+  <%= link_to "New parking", new_parking_path %>
 <%end%>
-</table>
+
 
 
 
