@@ -1,10 +1,5 @@
-<p style="color: green"><%= notice %></p>
-
-<%= render @parking %>
-
+<P><%= @parking.name %></P>
+<P><%= @parking.description %></P>
 <div>
-  <%= link_to "Edit this parking", edit_parking_path(@parking) %> |
-  <%= link_to "Back to parkings", parkings_path %>
-
-  <%= button_to "Destroy this parking", @parking, method: :delete %>
+   <%= link_to "Edit", edit_parking_path(@parking) %> | <%= link_to "Delete", @parking, method: :delete %> 
 </div>

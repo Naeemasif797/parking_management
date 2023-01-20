@@ -1,12 +1,10 @@
-<div id="<%= dom_id parking %>">
-  <p>
-    <strong>Name:</strong>
-    <%= parking.name %>
-  </p>
 
-  <p>
-    <strong>Description:</strong>
-    <%= parking.description %>
-  </p>
+<tr>
+	<th scope="row"><%= parking.id %></th>
+	<td><%= parking.name %></td>
+	<td><%= parking.description %></td>
+	<td><%= link_to "Details", parking %> | <%= link_to "Edit", edit_parking_path(parking) %> | <%= link_to "Delete", parking, method: :delete %> </td>
+</tr>
 
-</div>
+
+

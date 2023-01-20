@@ -1,24 +1,26 @@
-<p style="color: green"><%= notice %></p>
-
-<h1>Parkings</h1>
 
 <% if current_user && current_user.admin == true %>
-<%= link_to "Sign out", destroy_user_session_path, data: {turbo_method: :delete} %>
+<h1>Parkings</h1>
+ <table class="table">
+ <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">NAME</th>
+      <th scope="col">DESCRIPTION</th>
+      <th scope="col">ACTIONS</th>
+    </tr>
+  </thead>
+
+<%= link_to "New parking", new_parking_path %>
 <div id="parkings">
+	<tbody>
   <% @parkings.each do |parking| %>
     <%= render parking %>
-    <p>
-      <%= link_to "Show this parking", parking %>
-    </p>
   <% end %>
-  <%= link_to "New parking", new_parking_path %>
+   </tbody>
 </div>
-<%elsif current_user%>
-<%= link_to "Sign out", destroy_user_session_path, data: {turbo_method: :delete} %>
-<%else%>
-<%= link_to "Sign in", new_user_session_path %>
-<%= link_to "Sign up", new_user_registration_path %>
 <%end%>
+</table>
 
 
 
