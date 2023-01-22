@@ -1,0 +1,23 @@
+
+  <h1>Slots</h1>
+  <table class="table">
+     <thead>
+      <tr>
+        <th scope="col">Zone</th>
+        <th scope="col">Type</th>
+        <th scope="col">Status</th>
+        <th scope="col">Parking</th>
+        <th scope="col">ACTIONS</th>
+      </tr>
+    </thead>
+    <div id="parkings">
+    	<tbody>
+        <% @slots.each do |slot| %>
+        <%= render slot %>
+        <% end %>
+      </tbody>
+    </div>
+  </table>
+<% if current_user && current_user.admin == true %>
+  <%= link_to "New slot", new_slot_path %>
+<%end%>

@@ -1,0 +1,37 @@
+<%= form_with(model: slot) do |form| %>
+  <% if slot.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(slot.errors.count, "error") %> prohibited this slot from being saved:</h2>
+
+      <ul>
+        <% slot.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :zone, style: "display: block" %>
+    <%= form.text_field :zone %>
+  </div>
+
+  <div>
+    <%= form.label :type, style: "display: block" %>
+    <%= form.text_field :slot_type %>
+  </div>
+
+  <div>
+    <%= form.label :status, style: "display: block" %>
+    <%= form.text_field :status %>
+  </div>
+
+  <div>
+    <%= form.label :parking_id, style: "display: block" %>
+    <%= form.text_field :parking_id %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

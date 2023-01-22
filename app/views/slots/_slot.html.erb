@@ -1,0 +1,12 @@
+<tr>
+  <th scope="row"><%= slot.zone %></th>
+  <td><%= slot.slot_type %></td>
+  <td><%= slot.status %></td>
+  <td><%= slot.parking.name %></td>
+  <% if current_user && current_user.admin == true %>
+    <td><%= link_to "Details", slot %> | <%= link_to "Edit", edit_slot_path(slot) %> | <%= link_to "Delete", slot, method: :delete %> </td>
+  <% else %>
+  
+  <%end%>
+</tr>
+
