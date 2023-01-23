@@ -5,8 +5,9 @@ Rails.application.routes.draw do
   resources :slots
   resources :parkings
   devise_for :users
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+ get 'bookings', to: 'bookings#index'
+ get '/mybookings/:id', to: 'bookings#my_bookings', as: 'mybookings'
+ get '/bookings/new/:id', to: 'bookings#new', as: 'newbooking'
+ post 'bookings', to: 'bookings#create'
 end

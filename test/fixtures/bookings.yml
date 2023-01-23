@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  booking_from: 2023-01-22 22:52:05
+  booking_to: 2023-01-22 22:52:05
+  user: one
+  slot: one
+
+two:
+  booking_from: 2023-01-22 22:52:05
+  booking_to: 2023-01-22 22:52:05
+  user: two
+  slot: two

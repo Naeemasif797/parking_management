@@ -6,7 +6,7 @@
   <% if current_user && current_user.admin == true %>
     <td><%= link_to "Details", slot %> | <%= link_to "Edit", edit_slot_path(slot) %> | <%= link_to "Delete", slot, method: :delete %> </td>
   <% else %>
-  
+ <td> <%= link_to "Make Booking", newbooking_path(slot) %> </td>
   <%end%>
 </tr>
 

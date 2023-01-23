@@ -1,0 +1,25 @@
+  <h1>My Bookings</h1>
+  <table class="table">
+     <thead>
+      <tr>
+        <th scope="col">Booking ID</th>
+        <th scope="col">Booking From</th>
+        <th scope="col">Booking To</th>
+        <th scope="col">ACTIONS</th>
+      </tr>
+    </thead>
+    <div id="parkings">
+    	<tbody>
+        <% @bookings.each do |booking| %>
+        <tr>
+         
+          <td><%= booking.id %></td>
+          <td><%= booking.booking_from %></td>
+          <td><%= booking.booking_to %></td>
+          <td></td>
+         
+        </tr>
+        <% end %>
+      </tbody>
+    </div>
+  </table>
