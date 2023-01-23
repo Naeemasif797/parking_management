@@ -1,31 +1,35 @@
-<%= form_with(model: @booking) do |form| %>
-  <% if @booking.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(@booking.errors.count, "error") %> prohibited this slot from being saved:</h2>
+<div class="row">
+  <div class="col">
+    <%= form_with(model: @booking) do |form| %>
+      <% if @booking.errors.any? %>
+        <div style="color: red">
+          <h2><%= pluralize(@booking.errors.count, "error") %> prohibited this slot from being saved:</h2>
+          <ul>
+            <% @booking.errors.each do |error| %>
+              <li><%= error.full_message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+     <div>
+        <%= form.label :From, style: "display: block" %>
+        <%= form.datetime_field :booking_from, class: "form-control" %>
+      </div>
+      <div>
+        <%= form.label :To, style: "display: block" %>
+        <%= form.datetime_field :booking_to, class: "form-control" %>
+      </div>
+      <div>
+        <%= form.hidden_field :slot_id, :value => @slot.id %>
+      </div>
+     <div>
+        <%= form.hidden_field :user_id, :value => current_user.id %>
+      </div>
 
-      <ul>
-        <% @booking.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
- <div>
-    <%= form.label :From, style: "display: block" %>
-    <%= form.datetime_field :booking_from %>
-  </div>
-  <div>
-    <%= form.label :To, style: "display: block" %>
-    <%= form.datetime_field :booking_to %>
-  </div>
-  <div>
-    <%= form.hidden_field :slot_id, :value => @slot.id %>
-  </div>
- <div>
-    <%= form.hidden_field :user_id, :value => current_user.id %>
-  </div>
-
-  <div>
-    <%= form.submit %>
-  </div>
-<% end %>
+      <div>
+        <%= form.submit %>
+      </div>
+    <% end %>
+ </div>
+<div class="col"></div>
+</div>
